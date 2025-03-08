@@ -1,1 +1,18 @@
-<!-- <p>brands works!</p> -->
+<p>brands works!</p>
+
+
+
+<div class="container mx-auto">
+  <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-20">
+    @for (p of allBrands; track $index) {
+    <div class="relative rounded overflow-hidden group">
+      <img [src]="p.image" alt="Hanging Planters"
+      class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-[0_0_15px_5px_rgba(34,197,94,0.7)]">
+ <p
+        class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-60 transition">
+        {{p.name}}
+      </p>
+    </div>
+  } @empty {<app-loder></app-loder>}
+  </div>
+</div>

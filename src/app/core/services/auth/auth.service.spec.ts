@@ -24,6 +24,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  forgetPassword(value: any) {
+    throw new Error('Method not implemented.');
+  }
+  verifyCode(value: Partial<{ resetCode: null; }>) {
+    throw new Error('Method not implemented.');
+  }
+  resetPassword(value: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private _HttpClient: HttpClient) { }
 
