@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [LoderComponent, SliderCatComponent, RouterLink, CurrencyPipe, SearchPipe,FormsModule],
+  imports: [LoderComponent, SliderCatComponent, RouterLink, SearchPipe, FormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -36,7 +36,7 @@ constructor (
 }
 
 ngOnInit(): void{
-
+  this._ToastrService.success('hi');
   this._ProductsService.getAllProducts().subscribe({
     next:(response)=>{ console.log(response.data);
       this.allProduct=response.data;
@@ -61,6 +61,7 @@ error:(err: any)=>{console.log(err);
 
 
 addToCart(id: any) {
+  this._ToastrService.success('');
   if (this._AuthService.login.value) {
     let myToken = localStorage.getItem('token');
     this._ProductsService.addProductToCart(myToken, id).subscribe({
@@ -76,7 +77,7 @@ addToCart(id: any) {
 
 
 addToWishlist(id: any) {
-this._ToastrService.success()
+
 
   if (this._AuthService.login.value) {
     let myToken = localStorage.getItem('token');
