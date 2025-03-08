@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { RouterLink } from '@angular/router';
 import { Category, Product } from './../../../product';
 import { ProductsService } from '../../../core/services/products.service';
@@ -28,7 +29,8 @@ throw new Error('Method not implemented.');
 
 constructor (
   private _ProductsService:ProductsService
-  ,private _AuthService:AuthService,){
+  ,private _AuthService:AuthService,
+  private _ToastrService:ToastrService){
   if(typeof localStorage!=='undefined'){ console.log(localStorage);
   }
 }
@@ -74,6 +76,8 @@ addToCart(id: any) {
 
 
 addToWishlist(id: any) {
+this._ToastrService.success()
+
   if (this._AuthService.login.value) {
     let myToken = localStorage.getItem('token');
     this._ProductsService.addProductToWishlist(myToken, id).subscribe({

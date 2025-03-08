@@ -10,6 +10,7 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { importProvidersFrom } from '@angular/core';
+import { provideToastr, ToastrModule } from 'ngx-toastr';
 
 
 
@@ -19,6 +20,6 @@ export class AppModule {}
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay()), provideHttpClient(withInterceptors([headresInterceptor , errorInterceptor])),
-    importProvidersFrom(BrowserAnimationsModule, CarouselModule),]
+    importProvidersFrom(BrowserAnimationsModule, CarouselModule), provideToastr(), ]
 
 };
