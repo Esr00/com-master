@@ -16,10 +16,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit{
-[x: string]: any;
 
+
+[x: string]: any;
+inWishlist = true;
 allProduct!:Product[];
 searchValue:string="";
+
+
 constructor (private _ProductsService:ProductsService,private _ToastrService:ToastrService ,private _AuthService:AuthService){}
 
 
@@ -53,17 +57,20 @@ addToCart(id: any) {
   }
 }
 
-addToWishlist(id: any) {
+addToWishlist(product: any) {
   if (this._AuthService.login.value) {
     let myToken = localStorage.getItem('token');
-    this._ProductsService.addProductToWishlist(myToken, id).subscribe({
+    this._ProductsService.addProductToWishlist(myToken, product._id).subscribe({
       next: (res) => {
-        this._ToastrService.success('added to wish list successfully');
+        product.inWishlist = true;
+        this._ToastrService.success('Added to wish list successfully');
         console.log(res);
       },
-      error:(err: any)=>{console.log(err);}
-
+      error: (err: any) => {
+        console.log(err);
+      }
     });
-  }}
+  }
+}
 
 }
