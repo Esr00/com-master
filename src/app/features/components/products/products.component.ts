@@ -72,5 +72,4 @@ addToWishlist(product: any) {
     });
   }
 }
-
 }
