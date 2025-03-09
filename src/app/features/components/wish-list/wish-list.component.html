@@ -1,6 +1,6 @@
-<p>wish-list works!</p>
+<!-- <p>wish-list works!</p> -->
 
-<div class="container mx-auto mt-10">
+<div class="container mx-auto mt-10 pt-10">
 
   @if (loading) {
 
@@ -53,8 +53,8 @@
       </div>
     }
     @else {
-      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-green-700
-                 md:text-5xl lg:text-6xl dark:text-white flex justify-center items-center">
+      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight mt-20 pt-20  text-green-700
+                 md:text-5xl lg:text-6xl flex justify-center items-center">
       wish-list is empty
       </h1>
     }
@@ -62,40 +62,3 @@
 </div>
 
 
-
-<!-- <div class="bg-gray-100 h-screen py-8">
-  <div class="container mx-auto px-4">
-      <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
-<h3>{{zz}}</h3>
-
-      <div class="flex flex-col md:flex-row gap-4">
-          <div class="md:w-3/4">
-              <div class="bg-white rounded-lg shadow-md p-6 mb-4">
-                  <table class="w-full">
-                      <thead>
-                          <tr>
-                              <th class="text-left font-semibold">Product</th>
-                              <th class="text-left font-semibold">Price</th>
-                              <th class="text-left font-semibold">Quantity</th>
-                              <th class="text-left font-semibold">Total</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td class="py-4">
-                                  <div class="flex items-center">
-                                      <img class="h-16 w-16 mr-4"[src]="Products.imgCover" alt="Product image">
-                                      <span class="font-semibold">Product name</span>
-                                  </div>
-                              </td>
-                              <td class="py-4">$19.99</td>
-                              <td class="py-4">
-                                  <div class="flex items-center">
-                                      <button class="border rounded-md py-2 px-4 mr-2">-</button>
-                                      <span class="text-center w-8">1</span>
-                                      <button class="border rounded-md py-2 px-4 ml-2">+</button>
-                                  </div>
-                              </td>
-                              <td class="py-4">$19.99</td>
-                          </tr>
-                          <!-- More product rows -->

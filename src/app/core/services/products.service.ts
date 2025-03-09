@@ -1,7 +1,7 @@
 import { Product } from './../../product';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
 
 
-
+numOfCartItem=signal(0);
 
   [x: string]: any;
 

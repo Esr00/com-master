@@ -1,10 +1,10 @@
-<h2 class="text-4xl text-center mt-5 font-bold text-green-600 dark:text-white">Register Now</h2>
+<h2 class="text-4xl text-center mt-5 font-bold text-green-600 ">Register Now</h2>
 
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="max-w-sm mx-auto mt-10 pt-10">
 
 
-  @if (errorMsg) { <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 mt-5 mb-5 " role="alert">
+  @if (errorMsg) { <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50  " role="alert">
 
     <div>this acount is already exists</div>
 </div>}
@@ -12,11 +12,11 @@
 
   <!-- Name Field -->
   <div class="mb-5">
-    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-    <input formControlName="name" type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+    <input formControlName="name" type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
 
     @if ( registerForm.get('name')?.touched && registerForm.get('name')?.hasError('required')) {
-      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
         <div>
          pleas enter your name
         </div>
@@ -24,14 +24,14 @@
 
 
       @if ( registerForm.get('name')?.touched &&registerForm.get('name')?.hasError('minlength')) {
-        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
           <div>
   at lest 3 charcters
           </div>
         </div>}
 
         @if ( registerForm.get('name')?.touched &&registerForm.get('name')?.hasError('maxlength')) {
-          <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+          <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50" role="alert">
             <div>
    maxmimum 15 charcters
             </div>
@@ -40,17 +40,17 @@
   <!-- Email Field -->
   <div class="mb-5">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-    <input formControlName="email" type="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600">
+    <input formControlName="email" type="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
 
     @if ( registerForm.get('email')?.touched && registerForm.get('email')?.hasError('email')) {
-      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
         <div>
          pleas enter your correct email
         </div>
       </div>}
 
       @if ( registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')) {
-        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
           <div>
            pleas enter your email
           </div>
@@ -60,11 +60,11 @@
 
   <!-- Password Field -->
   <div class="mb-5">
-    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Password</label>
-    <input formControlName="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600">
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Your Password</label>
+    <input formControlName="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
 
     @if ( registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')) {
-      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
         <div>
          pleas enter your password
         </div>
@@ -72,12 +72,12 @@
 </div>
   <!-- Repassword Field -->
   <div class="mb-5">
-    <label for="repassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Re-enter Password</label>
-    <input formControlName="rePassword" type="password" id="repassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600">
+    <label for="repassword" class="block mb-2 text-sm font-medium text-gray-900 ">Re-enter Password</label>
+    <input formControlName="rePassword" type="password" id="repassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
 
 
     @if ( registerForm.get('rePassword')?.touched && registerForm.get('rePassword')?. value !== registerForm.get('password')?.value ) {
-      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
         <div>
 didn't match password
         </div>
@@ -86,18 +86,18 @@ didn't match password
 
   <!-- Phone Field -->
   <div class="mb-5">
-    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-    <input formControlName="phone" type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600">
+    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 ">Phone</label>
+    <input formControlName="phone" type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
 
     @if ( registerForm.get('phone')?.touched && registerForm.get('phone')?.hasError('required')) {
-      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+      <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
         <div>
          pleas enter your phone nummber
         </div>
       </div>}
 
       @if ( registerForm.get('phone')?.touched && registerForm.get('phone')?.hasError('pattern')) {
-        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+        <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
           <div>
            pleas enter correct phone nummber
           </div>
@@ -109,11 +109,11 @@ didn't match password
 
 
   @if (loading) { <button type="submit"
-  class="text-white mt-5 bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 hover:border-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-transparent dark:hover:text-white dark:hover:border-blue-500">
+  class="text-white mt-5 bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 hover:border-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">
 <i class="fa-spin fas fa-spinner"></i>
  </button>
 }@else {<button type="submit"
-class="text-white mt-5 bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 hover:border-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-transparent dark:hover:text-white dark:hover:border-blue-500">
+class="text-white mt-5 bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 hover:border-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">
  Register Now
 </button>}
 

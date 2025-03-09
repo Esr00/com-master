@@ -1,5 +1,6 @@
 
 export interface Product {
+[x: string]: any;
 isWishlisted: any;
 product: any;
 count: any;

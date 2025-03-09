@@ -7,6 +7,7 @@ import { LoderComponent } from "../../../shared/loder/loder.component";
 import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../../../core/pipes/search.pipe';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +20,7 @@ export class ProductsComponent implements OnInit{
 
 allProduct!:Product[];
 searchValue:string="";
-constructor (private _ProductsService:ProductsService ,private _AuthService:AuthService){}
+constructor (private _ProductsService:ProductsService,private _ToastrService:ToastrService ,private _AuthService:AuthService){}
 
 
 
@@ -37,13 +38,16 @@ ngOnInit(): void{
 
 }
 addToCart(id: any) {
+
+
   if (this._AuthService.login.value) {
+
     let myToken = localStorage.getItem('token');
     this._ProductsService.addProductToCart(myToken, id).subscribe({
       next: (res) => {
+        this._ToastrService.success('added to cart successfully');
         console.log(res);
-        alert('add');
-        
+
       }
     });
   }
@@ -54,8 +58,8 @@ addToWishlist(id: any) {
     let myToken = localStorage.getItem('token');
     this._ProductsService.addProductToWishlist(myToken, id).subscribe({
       next: (res) => {
+        this._ToastrService.success('added to wish list successfully');
         console.log(res);
-        alert('add');
       },
       error:(err: any)=>{console.log(err);}
 
